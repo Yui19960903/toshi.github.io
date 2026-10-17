@@ -7,38 +7,37 @@
     body {
         margin: 0;
         font-family: "Yu Gothic", sans-serif;
-        background: linear-gradient(135deg, #ff4b6e, #ff7a9b);
+        background: linear-gradient(135deg, #ff2f5b, #ff6a8c);
         height: 100vh;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
         color: #fff;
     }
 
-    /* いちご模様の背景ドット */
+    /* いちごの種っぽいドット模様 */
     body::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-image:
-            radial-gradient(circle, rgba(255,255,255,0.25) 2px, transparent 2px);
-        background-size: 40px 40px;
-        opacity: 0.4;
+        background-image: radial-gradient(rgba(255,255,255,0.25) 2px, transparent 2px);
+        background-size: 32px 32px;
+        opacity: 0.35;
     }
 
     .slide {
-        width: 80%;
-        max-width: 1000px;
-        padding: 50px;
-        border-radius: 28px;
-        backdrop-filter: blur(18px);
-        background: rgba(255, 255, 255, 0.18);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.35);
-        display: none;
-        animation: fade 0.5s ease;
         position: relative;
         z-index: 2;
+        width: 90%;
+        max-width: 1200px;
+        padding: 60px;
+        border-radius: 30px;
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 0 40px rgba(0,0,0,0.35);
+        display: none;
+        animation: fade 0.5s ease;
     }
 
     .slide.active {
@@ -46,75 +45,66 @@
     }
 
     @keyframes fade {
-        from { opacity: 0; transform: translateY(15px); }
+        from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
     h1, h2 {
         margin-top: 0;
         font-weight: 700;
+        font-size: 48px;
         letter-spacing: 1px;
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 1.8;
+    }
+
+    ul {
+        margin-top: 20px;
+        font-size: 24px;
+        line-height: 1.9;
     }
 
     .tag {
         display: inline-block;
-        padding: 6px 12px;
+        padding: 10px 18px;
         border-radius: 999px;
-        background: rgba(255,255,255,0.3);
-        font-size: 13px;
-        margin-right: 8px;
-        margin-top: 6px;
-    }
-
-    ul {
-        margin-top: 15px;
-        line-height: 1.8;
-        font-size: 17px;
-    }
-
-    .hint {
-        position: fixed;
-        bottom: 20px;
-        width: 100%;
-        text-align: center;
-        font-size: 15px;
-        text-shadow: 0 0 6px rgba(0,0,0,0.8);
-        z-index: 3;
+        background: rgba(255,255,255,0.28);
+        font-size: 18px;
+        margin-right: 10px;
+        margin-top: 10px;
     }
 </style>
 </head>
 <body>
 
-<!-- スライド1：タイトル -->
+<!-- スライド1 -->
 <div class="slide active" id="slide1">
     <h1>🍓 美味しいいちごの品種紹介</h1>
     <p>日本の人気いちごを、味・特徴・おすすめの食べ方と一緒に紹介します。</p>
-    <p>キーボードの <strong>← →</strong> キーでスライドを切り替えできます。</p>
 </div>
 
-<!-- スライド2：あまおう -->
+<!-- スライド2 -->
 <div class="slide" id="slide2">
     <h2>🍓 あまおう（福岡）</h2>
-    <div>
-        <span class="tag">大粒</span>
-        <span class="tag">濃い甘さ</span>
-        <span class="tag">酸味ひかえめ</span>
-    </div>
+    <span class="tag">大粒</span>
+    <span class="tag">濃い甘さ</span>
+    <span class="tag">酸味ひかえめ</span>
     <ul>
-        <li>名前は「<strong>あ</strong>かい・<strong>ま</strong>るい・<strong>お</strong>おきい・<strong>う</strong>まい」。</li>
+        <li>「あかい・まるい・おおきい・うまい」が名前の由来。</li>
         <li>圧倒的な存在感の“いちごの王様”。</li>
         <li>生で食べると甘さが一番引き立つ。</li>
         <li>贈答用にも人気の高級いちご。</li>
     </ul>
 </div>
 
-<!-- スライド3：とちおとめ -->
+<!-- スライド3 -->
 <div class="slide" id="slide3">
     <h2>🍓 とちおとめ（栃木）</h2>
-    <div>
-        <span class="tag">甘さ×酸味のバランス</span>
-        <span class="tag">定番人気</span>
-    </div>
+    <span class="tag">甘さ×酸味のバランス</span>
+    <span class="tag">定番人気</span>
     <ul>
         <li>全国的に知名度が高い王道いちご。</li>
         <li>ケーキやパフェに最適な形と味。</li>
@@ -123,13 +113,11 @@
     </ul>
 </div>
 
-<!-- スライド4：紅ほっぺ -->
+<!-- スライド4 -->
 <div class="slide" id="slide4">
     <h2>🍓 紅ほっぺ（静岡）</h2>
-    <div>
-        <span class="tag">香り豊か</span>
-        <span class="tag">甘さしっかり</span>
-    </div>
+    <span class="tag">香り豊か</span>
+    <span class="tag">甘さしっかり</span>
     <ul>
         <li>「ほっぺが落ちるほど美味しい」が名前の由来。</li>
         <li>果肉まで赤く、見た目が華やか。</li>
@@ -138,13 +126,11 @@
     </ul>
 </div>
 
-<!-- スライド5：章姫 -->
+<!-- スライド5 -->
 <div class="slide" id="slide5">
     <h2>🍓 章姫（静岡）</h2>
-    <div>
-        <span class="tag">やわらかい果肉</span>
-        <span class="tag">酸味ほぼなし</span>
-    </div>
+    <span class="tag">やわらかい果肉</span>
+    <span class="tag">酸味ほぼなし</span>
     <ul>
         <li>細長い形とやわらかい果肉が特徴。</li>
         <li>優しい甘さで子どもにも人気。</li>
@@ -153,13 +139,11 @@
     </ul>
 </div>
 
-<!-- スライド6：さがほのか -->
+<!-- スライド6 -->
 <div class="slide" id="slide6">
     <h2>🍓 さがほのか（佐賀）</h2>
-    <div>
-        <span class="tag">つやつやの赤</span>
-        <span class="tag">甘さメイン</span>
-    </div>
+    <span class="tag">つやつやの赤</span>
+    <span class="tag">甘さメイン</span>
     <ul>
         <li>つやのある美しい赤色が特徴。</li>
         <li>酸味が少なく、やさしい甘さ。</li>
@@ -168,23 +152,17 @@
     </ul>
 </div>
 
-<!-- スライド7：スカイベリー -->
+<!-- スライド7 -->
 <div class="slide" id="slide7">
     <h2>🍓 スカイベリー（栃木）</h2>
-    <div>
-        <span class="tag">超大粒</span>
-        <span class="tag">高級ギフト向き</span>
-    </div>
+    <span class="tag">超大粒</span>
+    <span class="tag">高級ギフト向き</span>
     <ul>
         <li>「空に届くほど大きく美しい」が名前の由来。</li>
         <li>果肉まで赤く、大玉で存在感抜群。</li>
         <li>甘さと酸味のバランスが良い。</li>
         <li>特別な贈り物に選ばれる高級いちご。</li>
     </ul>
-</div>
-
-<div class="hint">
-    ← 左キー / 右キー → でスライド切り替え（全7枚）
 </div>
 
 <script>
